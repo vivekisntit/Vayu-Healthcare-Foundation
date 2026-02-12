@@ -20,12 +20,18 @@
         <input type="text" name="phone" placeholder="Phone Number" required />
         <input type="text" name="location" placeholder="Location" required />
 
-        <select name="category" required>
-          <option value="">Select Issue Category</option>
-          <option value="medical">Medical</option>
-          <option value="mental">Mental Health</option>
-          <option value="emergency">Emergency</option>
+        <select id="category" name="category" required>
+            <option value="">Select Broad Category</option>
+            <option value="physical">Physical Health</option>
+            <option value="mental">Mental Health</option>
+            <option value="maternal">Maternal & Child Health</option>
+            <option value="social">Social & Family Health Concerns</option>
         </select>
+
+        <select id="specificIssue" name="specificIssue" required disabled>
+        <option value="">Select Specific Issue</option>
+        </select>
+
 
         <textarea name="description" placeholder="Describe the issue in detail..." required></textarea>
 
