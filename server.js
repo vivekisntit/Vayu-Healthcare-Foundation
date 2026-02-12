@@ -6,15 +6,14 @@ const cors = require("cors");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Middleware
+app.set("trust proxy", 1);
+
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Serve static frontend
 app.use(express.static(path.join(__dirname, "public")));
 
-// Routes
 const supportRoute = require("./routes/support");
 app.use("/api/support", supportRoute);
 

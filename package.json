@@ -1,13 +1,20 @@
 {
   "name": "foundation_vayu",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "AI-powered healthcare triage system for Vayu Healthcare Foundation",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "dev": "node server.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "healthcare",
+    "ngo",
+    "ai",
+    "triage",
+    "gemini"
+  ],
+  "author": "Vivek",
   "license": "ISC",
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
