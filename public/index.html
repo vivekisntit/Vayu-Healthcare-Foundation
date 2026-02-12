@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CareConnect - Patient Support</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>CareConnect - Patient Support Form</h1>
+
+  <form id="supportForm">
+    <input type="text" name="name" placeholder="Full Name" required />
+    <input type="text" name="phone" placeholder="Phone Number" required />
+    <input type="text" name="location" placeholder="Location" required />
+
+    <select name="category" required>
+      <option value="">Select Issue Category</option>
+      <option value="medical">Medical</option>
+      <option value="mental">Mental Health</option>
+      <option value="emergency">Emergency</option>
+    </select>
+
+    <textarea name="description" placeholder="Describe your issue..." required></textarea>
+
+    <button type="submit">Request Assistance</button>
+  </form>
+
+  <div id="result"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
