@@ -1,25 +1,19 @@
-const form = document.getElementById("supportForm");
-const resultDiv = document.getElementById("result");
+const priorityClass =
+  result.priority === "HIGH"
+    ? "high"
+    : result.priority === "MEDIUM"
+      ? "medium"
+      : "low";
 
-form.addEventListener("submit", async (e) => {
-  e.preventDefault();
-
-  const formData = new FormData(form);
-  const data = Object.fromEntries(formData.entries());
-
-  const response = await fetch("/api/support", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data),
-  });
-
-  const result = await response.json();
-
-  resultDiv.innerHTML = `
-    <h3>${result.message}</h3>
-    <p><strong>Summary:</strong> ${result.summary}</p>
-    <p><strong>Priority:</strong> ${result.priority}</p>
-  `;
-});
+resultDiv.innerHTML = `
+  <div class="result-content">
+    <h3>Request Submitted Successfully</h3>
+    <p><strong>AI Summary:</strong> ${result.summary}</p>
+    <p>
+      <strong>Priority:</strong> 
+      <span class="priority ${priorityClass}">
+        ${result.priority}
+      </span>
+    </p>
+  </div>
+`;
