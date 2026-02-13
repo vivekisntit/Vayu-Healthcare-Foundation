@@ -5,13 +5,13 @@ Live Demo: https://vayu-healthcare-foundation.onrender.com/
 
 ## Project Overview
 
-Vayu Healthcare Foundation is a concept-level web application designed to help NGOs efficiently manage and prioritize healthcare support requests across India.
+Vayu Healthcare Foundation is a web application designed to help NGOs efficiently manage and prioritize healthcare support requests across India.
 
 The system allows patients to submit structured support requests, which are then automatically analyzed using AI to:
 
 - Generate a concise case summary
 - Classify urgency level (LOW / MEDIUM / HIGH)
-- Assist NGOs in faster triage and response prioritization
+- Assist NGOs in faster preliminary assessment and response prioritization
 
 ---
 ## India focused Healthcare Design
@@ -26,11 +26,10 @@ The application has:
 
 
 **Dynamically loading Sub-categories :**  
-- Tuberculosis
-- Diabetes
-- Depression
-- Sucidal thoughts
-- Pregnancy complications
+- Tuberculosis, Diabetes, Cardiac issues... etc
+- Depression, Anxiety Sucidal thoughts... etc
+- Pregnancy complications, Child malnutrition, vaccination support... etc
+- Domestic violence, Elderly neglect, Disability support... etc
 
 This structure improves context for AI classification.
 
@@ -40,12 +39,12 @@ This structure improves context for AI classification.
 #### This application integrates Gemini API to perform:
 
 **Case Summarization**
-- The AI condenses the patient’s description into a 1–2 line structured summary.
+- The AI condenses the patient’s description into a 1–2 line concise summary.
 
 **Urgency Classification**
 
 Each case is categorized as:
-- **HIGH** - Life-threatening symptoms, suicidal ideation, severe emergencies
+- **HIGH** - Life-threatening symptoms, suicidal behaviour, severe emergencies
 - **MEDIUM** - Moderate symptoms requiring timely intervention
 - **LOW** - General or non-urgent requests
 
