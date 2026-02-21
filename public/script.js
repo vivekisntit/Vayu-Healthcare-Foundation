@@ -1,9 +1,3 @@
-// ===============================
-// Vayu Healthcare Foundation
-// Frontend Logic
-// ===============================
-
-// Elements
 const form = document.getElementById("supportForm");
 const resultDiv = document.getElementById("result");
 const categorySelect = document.getElementById("category");
@@ -40,13 +34,8 @@ const issues = {
   ],
 };
 
-// ===============================
-// Dynamic Dropdown Logic
-// ===============================
 categorySelect.addEventListener("change", function () {
   const selectedCategory = this.value;
-
-  // Reset specific issue dropdown
   specificIssueSelect.innerHTML =
     '<option value="">Select Specific Issue</option>';
 
@@ -64,13 +53,8 @@ categorySelect.addEventListener("change", function () {
   }
 });
 
-// ===============================
-// Form Submission Logic
-// ===============================
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
-
-  // Show loading state
   resultDiv.innerHTML = `
     <div class="result-content">
       <p>Processing your request...</p>
@@ -80,7 +64,6 @@ form.addEventListener("submit", async (e) => {
   try {
     const formData = new FormData(form);
     const data = Object.fromEntries(formData.entries());
-
     const response = await fetch("/api/support", {
       method: "POST",
       headers: {
@@ -90,13 +73,10 @@ form.addEventListener("submit", async (e) => {
     });
 
     const result = await response.json();
-
-    // Determine priority styling
     let priorityClass = "low";
     if (result.priority === "HIGH") priorityClass = "high";
     if (result.priority === "MEDIUM") priorityClass = "medium";
 
-    // Render result
     resultDiv.innerHTML = `
       <div class="result-content">
         <h3>Request Submitted Successfully</h3>
